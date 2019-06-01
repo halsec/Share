@@ -380,3 +380,366 @@ Nb de dossiers sans permissions : 3
 Windows PowerShell transcript end
 End time: 20190601110135
 **********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601121941
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+PS>TerminatingError(Get-Acl): "A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1'."
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+
+>> TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White".""
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot 
+convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following 
+enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMag
+enta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the
+following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share1
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share1
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share1
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule...}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:AI(A;OICIID;FA;;;BA)(A;OICIID;FA;;;SY)(A;OICIID;0x1200a9;;;BU)(A;ID;0x1301bf;;;AU)(A;OICIIOID;SDGXGWGR;;;AU
+                          )
+AccessToString          : BUILTIN\Administrators Allow  FullControl
+                          NT AUTHORITY\SYSTEM Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+                          NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\Authenticated Users Allow  -536805376
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : False
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share2
+PS>TerminatingError(Get-Acl): "A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share2'."
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share2'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share2'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+
+>> TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White".""
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot 
+convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following 
+enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMag
+enta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the
+following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share2
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share2
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share2
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule...}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:AI(A;OICIID;FA;;;BA)(A;OICIID;FA;;;SY)(A;OICIID;0x1200a9;;;BU)(A;ID;0x1301bf;;;AU)(A;OICIIOID;SDGXGWGR;;;AU
+                          )
+AccessToString          : BUILTIN\Administrators Allow  FullControl
+                          NT AUTHORITY\SYSTEM Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+                          NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\Authenticated Users Allow  -536805376
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : False
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share3
+PS>TerminatingError(Get-Acl): "A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share3'."
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share3'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share3'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+
+>> TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White".""
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot 
+convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following 
+enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMag
+enta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the
+following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share3
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share3
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share3
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI(A;OICI;0x1301bf;;;AU)(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)
+AccessToString          : NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\SYSTEM Allow  FullControl
+                          BUILTIN\Administrators Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share1\Test1
+PS>TerminatingError(Get-Acl): "A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\Test1'."
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\Test1'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\Test1'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+
+>> TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White".""
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot 
+convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following 
+enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMag
+enta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the
+following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share1\Test1
+Convert-Path : Access is denied
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershe...st\Share1\Test1:String) [Convert-Path], 
+UnauthorizedAccessException
+    + FullyQualifiedErrorId : ItemExistsUnauthorizedAccessError,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Access is denied
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershe...st\Share1\Test1:String) [Convert-Path], UnauthorizedAccessException
+    + FullyQualifiedErrorId : ItemExistsUnauthorizedAccessError,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+Convert-Path : Cannot find path 'C:\HAL\Powershell\Share\test\Share1\Test1' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\HAL\Powershe...st\Share1\Test1:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\HAL\Powershell\Share\test\Share1\Test1' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\HAL\Powershe...st\Share1\Test1:String) [Convert-Path], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get C:\HAL\Powershell\Share\test\Share1\Test1
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share1\test2
+PS>TerminatingError(Get-Acl): "A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\test2'."
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\test2'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+Get-Acl : A positional parameter cannot be found that accepts argument 'C:\HAL\Powershell\Share\test\Share1\test2'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:12
++     $acl = get-acl -LiteralPath.$d.FullName
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Acl], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.GetAclCommand
+
+>> TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White".""
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot 
+convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the following 
+enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMag
+enta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor' to the target. Exception setting "ForegroundColor": "Cannot convert null to type "System.ConsoleColor" due to enumeration values that are not valid. Specify one of the
+following enumeration values and try again. The possible enumeration values are "Black,DarkBlue,DarkGreen,DarkCyan,DarkRed,DarkMagenta,DarkYellow,Gray,DarkGray,Blue,Green,Cyan,Red,Magenta,Yellow,White"."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : ParameterBindingFailed,Microsoft.PowerShell.Commands.WriteHostCommand
+
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share1\test2
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share1\test2
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1\test2
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+PSChildName             : test2
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1\test2
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI(A;OICI;0x1301bf;;;AU)(A;OICI;0x1200a9;;;S-1-5-13)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)
+AccessToString          : NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\TERMINAL SERVER USER Allow  ReadAndExecute, Synchronize
+                          BUILTIN\Administrators Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+Nb de dossiers sans permissions : 5
+**********************
+Windows PowerShell transcript end
+End time: 20190601121942
+**********************

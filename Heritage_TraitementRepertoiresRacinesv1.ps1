@@ -86,9 +86,9 @@ $count = 0
 foreach ($d in $dir)
 {
     Write-host $d.FullName -ForegroundColor Green
-    $acl = get-acl -LiteralPath.$d.FullName 
+    $acl = get-acl -LiteralPath $d.FullName 
     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
-
+    get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Audit.Count }
      
     Set-Inheritance $d.FullName -NoInherit -NoPreserve
     $count ++
