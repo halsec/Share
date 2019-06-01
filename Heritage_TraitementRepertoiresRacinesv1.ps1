@@ -1,4 +1,4 @@
-# Fonction pour réparer les héritages cassés
+# Fonction pour rï¿½parer les hï¿½ritages cassï¿½s
 Function Set-Inheritance {
  
 [cmdletbinding(SupportsShouldProcess)]
@@ -34,7 +34,7 @@ PROCESS {
     Write-Verbose ("Resetting inheritance on {0}" -f $fitem.fullname)
     $aclProperties = Get-Acl $fItem
  
-    Write-Verbose ($aclProperties | Select * | out-string)
+    Write-Verbose ($aclProperties | Select-Object * | out-string)
     	
     if ($noinherit) {
         Write-Verbose "Setting inheritance to NoInherit"
@@ -75,37 +75,37 @@ END {
 } #end function
 
 # Fichier de log dans F:\Scripts\Share\
-Start-Transcript -Path F:\Scripts\Share\Heritage_TraitementRepertoiresRacinesv1.log -Append
+#Start-Transcript -Path F:\Scripts\Share\Heritage_TraitementRepertoiresRacinesv1.log -Append
+Start-Transcript -Path C:\HAL\Powershell\Share\log\Heritage_Traitement.log -Append
 
-# Scan des répertoires racines
-$path = "P:\Partages\"
+# Scan des rï¿½pertoires racines
+$path = "C:\HAL\Powershell\Share\test"
 $dir = Get-ChildItem -Attributes Directory -Path $path
 $count = 0
+
 foreach ($d in $dir)
 {
-    if ($d.Name -like "g*")
-    {
-        Write-host $d.Name -ForegroundColor Green
-        #$acl = Get-Acl -Path "F:\Scripts\$d"
-        #$acl.access.IdentityReference
-
-        # Récupération des acls non hérités et de l'acl du dossier
-        $dossier_name = $path + $d
-        write-host $dossier_name
-        $aclaccess = Get-Acl -Path $dossier_name | Select-Object -ExpandProperty Access | Where-Object { -Not $_.IsInherited }
-        $aclfolder = Get-Acl -Path $dossier_name
-
-        if ($aclfolder.AreAccessRulesProtected -eq $true)
-        {
-            Write-host $aclaccess.count -ForegroundColor Red
-            $aclfolder
-            $aclfolder.Access
-            $count ++
-            $aclfolder.SetAccessRuleProtection($False,$True)
-            $aclfolder | Set-Acl -Path $dossier_name
-        }
-    }
+    Write-host $d.Name -ForegroundColor Green
+    Set_inheritance $d.Name
+    $count ++
 }
+<#
+    # Rï¿½cupï¿½ration des acls non hï¿½ritï¿½s et de l'acl du dossier
+    $dossier_name = $path + $d
+    write-host $dossier_name
+    $aclaccess = Get-Acl -Path $dossier_name | Select-Object -ExpandProperty Access | Where-Object { -Not $_.IsInherited }
+    $aclfolder = Get-Acl -Path $dossier_name
+
+    if ($aclfolder.AreAccessRulesProtected -eq $true)
+    {
+        Write-host $aclaccess.count -ForegroundColor Red
+        $aclfolder
+        $aclfolder.Access
+        $count ++
+        $aclfolder.SetAccessRuleProtection($False,$True)
+        $aclfolder | Set-Acl -Path $dossier_name
+    }
+}#>
 write-host "Nb de dossiers sans permissions : $count"
 
 Stop-Transcript
