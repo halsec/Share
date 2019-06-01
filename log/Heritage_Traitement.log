@@ -743,3 +743,355 @@ Nb de dossiers sans permissions : 5
 Windows PowerShell transcript end
 End time: 20190601121942
 **********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601122206
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share1' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share1:String) [Get-ChildItem], 
+UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share1' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share1:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share2' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share2:String) [Get-ChildItem], 
+UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share2' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share2:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+C:\HAL\Powershell\Share\test\Share1
+PS>TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'.""
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: 
+"Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share1
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share1
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share1
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI
+AccessToString          : 
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share2
+PS>TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'.""
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: 
+"Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share2
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share2
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share2
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI
+AccessToString          : 
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share3
+PS>TerminatingError(Write-Host): "Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'.""
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: 
+"Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+Write-Host : Cannot bind parameter 'ForegroundColor'. Cannot convert value "True" to type "System.ConsoleColor". Error: "Invalid cast from 'System.Boolean' to 'System.ConsoleColor'."
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:90 char:35
++     Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Write-Host], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.WriteHostCommand
+
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share3
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share3
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share3
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI(A;OICI;0x1301bf;;;AU)(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)
+AccessToString          : NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\SYSTEM Allow  FullControl
+                          BUILTIN\Administrators Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+Nb de dossiers sans permissions : 3
+**********************
+Windows PowerShell transcript end
+End time: 20190601122207
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601122353
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share1' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share1:String) [Get-ChildItem], 
+UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share1' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share1:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share2' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share2:String) [Get-ChildItem], 
+UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : Access to the path 'C:\HAL\Powershell\Share\test\Share2' is denied.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:83 char:8
++ $dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
++        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : PermissionDenied: (C:\HAL\Powershell\Share\test\Share2:String) [Get-ChildItem], UnauthorizedAccessException
+    + FullyQualifiedErrorId : DirUnauthorizedAccessError,Microsoft.PowerShell.Commands.GetChildItemCommand
+
+C:\HAL\Powershell\Share\test\Share1
+Protected True
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share1
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share1
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share1
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share1
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI
+AccessToString          : 
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share2
+Protected True
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share2
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share2
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share2
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share2
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI
+AccessToString          : 
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+C:\HAL\Powershell\Share\test\Share3
+Protected True
+0
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH C:\HAL\Powershell\Share\test\Share3
+VERBOSE: Resetting inheritance on C:\HAL\Powershell\Share\test\Share3
+VERBOSE: 
+
+PSPath                  : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+PSParentPath            : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test
+PSChildName             : Share3
+PSDrive                 : C
+PSProvider              : Microsoft.PowerShell.Core\FileSystem
+CentralAccessPolicyId   : 
+CentralAccessPolicyName : 
+Path                    : Microsoft.PowerShell.Core\FileSystem::C:\HAL\Powershell\Share\test\Share3
+Owner                   : HALSURFACE\halsec
+Group                   : HALSURFACE\halsec
+Access                  : {System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, System.Security.AccessControl.FileSystemAccessRule, 
+                          System.Security.AccessControl.FileSystemAccessRule}
+Sddl                    : O:S-1-5-21-1856473636-224214704-149194499-1001G:S-1-5-21-1856473636-224214704-149194499-1001D:PAI(A;OICI;0x1301bf;;;AU)(A;OICI;FA;;;SY)(A;OICI;FA;;;BA)(A;OICI;0x1200a9;;;BU)
+AccessToString          : NT AUTHORITY\Authenticated Users Allow  Modify, Synchronize
+                          NT AUTHORITY\SYSTEM Allow  FullControl
+                          BUILTIN\Administrators Allow  FullControl
+                          BUILTIN\Users Allow  ReadAndExecute, Synchronize
+AuditToString           : 
+AccessRightType         : System.Security.AccessControl.FileSystemRights
+AccessRuleType          : System.Security.AccessControl.FileSystemAccessRule
+AuditRuleType           : System.Security.AccessControl.FileSystemAuditRule
+AreAccessRulesProtected : True
+AreAuditRulesProtected  : False
+AreAccessRulesCanonical : True
+AreAuditRulesCanonical  : True
+VERBOSE: Setting inheritance to NoInherit
+VERBOSE: Removing existing rules
+VERBOSE: Setting the new ACL
+VERBOSE: Ending Set-Inheritance
+Nb de dossiers sans permissions : 3
+**********************
+Windows PowerShell transcript end
+End time: 20190601122354
+**********************
