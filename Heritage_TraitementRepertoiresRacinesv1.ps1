@@ -89,7 +89,7 @@ foreach ($d in $dir)
     Write-Host ("Protected {0}" -f $acl.AreAccessRulesProtected)
     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Audit.Count }
      
-    Set-Inheritance $d.FullName
+    Set-Inheritance $d.FullName -NoPreserve
     $count ++
 }
 <#
@@ -114,13 +114,13 @@ write-host "Nb de dossiers sans permissions : $count"
 Stop-Transcript
 
 <#
-$Path = "H:\Reseaux"
-$aclfolder = 	Get-Acl -Path $Path
-$aclfolder.SetAccessRuleProtection($False,$True)
-$aclfolder | Set-Acl -Path $Path
+#Backup restore
+$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
+$sddl= $acl.sddl
 
-$acl = get-acl -path "F:\Temp"
-$perm = 'Everyone', 'Delete', 'None', 'None', 'Deny'
-$rule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $perm
-$acl.SetAccessRule($rule)
-$acl | Set-Acl -Path "F:\Temp"#>
+$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
+$acl.SetSecurityDescriptorSddlForm($sddl)
+set-acl -Path C:\HAL\Powershell\Share\test\Share2 -AclObject $acl
+
+
+#>
