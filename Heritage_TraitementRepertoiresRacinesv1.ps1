@@ -22,6 +22,7 @@ BEGIN {
  
 PROCESS {
     Try {
+        Write-Verbose  "PATH $path"
         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction Stop  
     }
     Catch {
@@ -85,8 +86,8 @@ $count = 0
 
 foreach ($d in $dir)
 {
-    Write-host $d.Name -ForegroundColor Green
-    Set_inheritance $d.Name
+    Write-host $d.FullName -ForegroundColor Green
+    Set-Inheritance $d.FullName
     $count ++
 }
 <#

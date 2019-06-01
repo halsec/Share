@@ -1,0 +1,246 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20190601104710
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -Command & 'C:\Users\halse\.vscode\extensions\ms-vscode.powershell-2019.5.0\modules\PowerShellEditorServices\Start-EditorServices.ps1' -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2019.5.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'C:\Users\halse\.vscode\extensions\ms-vscode.powershell-2019.5.0\modules' -EnableConsoleRepl -LogLevel 'Normal' -LogPath 'C:\Users\halse\.vscode\extensions\ms-vscode.powershell-2019.5.0\logs\1559378075-c6c073b1-5d61-4d64-a037-b82e09a59d271559377988697\EditorServices.log' -SessionDetailsPath 'C:\Users\halse\.vscode\extensions\ms-vscode.powershell-2019.5.0\sessions\PSES-VSCode-21216-298870' -FeatureFlags @()
+Process ID: 18312
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+Share1
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Share2
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Share3
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or 
+operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Set_inheritance : The term 'Set_inheritance' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\HAL\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:89 char:5
++     Set_inheritance $d.Name
++     ~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Set_inheritance:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Nb de dossiers sans permissions : 3
+**********************
+Windows PowerShell transcript end
+End time: 20190601104711
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601104924
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 20876
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+Share1
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share1' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share1:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share1' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share1:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share1
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+Share2
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share2' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share2:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share2' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share2:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share2
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+Share3
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share3' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share3:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\Share\Share3' because it does not exist.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:25 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\Share\Share3:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share3
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+Nb de dossiers sans permissions : 3
+**********************
+Windows PowerShell transcript end
+End time: 20190601104924
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601105620
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+Share1
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH Share1
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share1' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share1:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share1' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share1:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share1
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+VERBOSE: Ending Set-Inheritance
+Share2
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH Share2
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share2' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share2:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share2' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share2:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share2
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+VERBOSE: Ending Set-Inheritance
+Share3
+VERBOSE: Starting Set-Inheritance
+VERBOSE: PATH Share3
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share3' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share3:String) [Convert-Path], 
+ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+Convert-Path : Cannot find path 'C:\hal\Powershell\share\Share3' because it does not exist.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:26 char:35
++         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction St ...
++                                   ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\hal\Powershell\share\Share3:String) [Convert-Path], ItemNotFoundExce
+   ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.ConvertPathCommand
+
+PS>TerminatingError(Get-Item): "Cannot bind argument to parameter 'Path' because it is null."
+WARNING: Failed to get Share3
+WARNING: Cannot bind argument to parameter 'Path' because it is null.
+VERBOSE: Ending Set-Inheritance
+Nb de dossiers sans permissions : 3
+**********************
+Windows PowerShell transcript end
+End time: 20190601105620
+**********************
