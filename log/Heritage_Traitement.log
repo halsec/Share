@@ -1095,3 +1095,255 @@ Nb de dossiers sans permissions : 3
 Windows PowerShell transcript end
 End time: 20190601122354
 **********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601122735
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share2
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share3
+Protected True
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share1\Test1
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share1\test2
+Protected True
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share3\TEST31
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'False'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'False'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+Nb de dossiers sans permissions : 6
+**********************
+Windows PowerShell transcript end
+End time: 20190601122735
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601123203
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 7096
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share2
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share3
+Protected True
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share1\Test1
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share1\test2
+Protected True
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+C:\HAL\Powershell\Share\test\Share3\TEST31
+Protected False
+0
+PS>TerminatingError(Set-Inheritance): "A positional parameter cannot be found that accepts argument 'True'."
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+Set-Inheritance : A positional parameter cannot be found that accepts argument 'True'.
+At C:\hal\Powershell\share\Heritage_TraitementRepertoiresRacinesv1.ps1:93 char:5
++     Set-Inheritance $d.FullName -NoInherit $true -NoPreserve $false
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Set-Inheritance], ParameterBindingException
+    + FullyQualifiedErrorId : PositionalParameterNotFound,Set-Inheritance
+
+Nb de dossiers sans permissions : 6
+**********************
+Windows PowerShell transcript end
+End time: 20190601123203
+**********************

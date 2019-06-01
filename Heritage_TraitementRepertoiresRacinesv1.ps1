@@ -1,7 +1,6 @@
 #$verbosePreference="Continue"
 # Fonction pour r�parer les h�ritages cass�s
 Function Set-Inheritance {
- 
 [cmdletbinding(SupportsShouldProcess)]
  
 Param(
@@ -39,19 +38,19 @@ PROCESS {
     if ($noinherit) {
         Write-Verbose "Setting inheritance to NoInherit"
     	if ($nopreserve) {
-     #remove inherited access rules  
+            #remove inherited access rules  
             Write-Verbose "Removing existing rules"          
-     $aclProperties.SetAccessRuleProtection($true,$false)
-     }
-     else {
-     #preserve inherited access rules
-     $aclProperties.SetAccessRuleProtection($true,$true)
-     }
+            $aclProperties.SetAccessRuleProtection($true,$false)
+        }
+        else {
+            #preserve inherited access rules
+            $aclProperties.SetAccessRuleProtection($true,$true)
+        }
     }
     else {
-     #the second parameter is required but actually ignored
+        #the second parameter is required but actually ignored
         #in this scenario
-     $aclProperties.SetAccessRuleProtection($false,$false)
+        $aclProperties.SetAccessRuleProtection($false,$false)
     }
     Write-Verbose "Setting the new ACL"
     #hashtable of parameters to splat to Set-ACL
@@ -90,7 +89,7 @@ foreach ($d in $dir)
     Write-Host ("Protected {0}" -f $acl.AreAccessRulesProtected)
     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Audit.Count }
      
-    Set-Inheritance $d.FullName -NoInherit $false -NoPreserve $true
+    Set-Inheritance $d.FullName -NoInherit
     $count ++
 }
 <#
