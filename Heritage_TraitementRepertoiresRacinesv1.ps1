@@ -1,3 +1,4 @@
+#$verbosePreference="Continue"
 # Fonction pour r�parer les h�ritages cass�s
 Function Set-Inheritance {
  
@@ -15,9 +16,7 @@ ValueFromPipeline=$True,ValueFromPipelineByPropertyName)]
 )
  
 BEGIN {
-    
-    Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
- 
+        Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
 } #begin
  
 PROCESS {
