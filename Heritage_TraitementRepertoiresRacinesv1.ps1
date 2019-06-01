@@ -80,13 +80,17 @@ Start-Transcript -Path C:\HAL\Powershell\Share\log\Heritage_Traitement.log -Appe
 
 # Scan des r�pertoires racines
 $path = "C:\HAL\Powershell\Share\test"
-$dir = Get-ChildItem -Attributes Directory -Path $path
+$dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
 $count = 0
 
 foreach ($d in $dir)
 {
     Write-host $d.FullName -ForegroundColor Green
-    Set-Inheritance $d.FullName
+    $acl = get-acl -LiteralPath.$d.FullName 
+    Write-Host "Protected {0}" -f $acl.AreAccessRulesProtected
+
+     
+    Set-Inheritance $d.FullName -NoInherit -NoPreserve
     $count ++
 }
 <#
