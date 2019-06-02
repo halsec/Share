@@ -84,12 +84,17 @@ $count = 0
 
 foreach ($d in $dir)
 {
-    Write-host $d.FullName -ForegroundColor Green
-    $acl = get-acl -LiteralPath $d.FullName 
+    $chemin = $d.FullName
+    Write-host $chemin -ForegroundColor Green
+    $acl = get-acl -LiteralPath $chemin
+    $accessavant = $acl.Access
     Write-Host ("Protected {0}" -f $acl.AreAccessRulesProtected)
-    get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Audit.Count }
+    #get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.Count }
      
-    Set-Inheritance $d.FullName -NoPreserve
+    Set-Inheritance $chemin -NoPreserve
+    $acl = get-acl -LiteralPath $chemin
+    $accessapres = $acl.Access
+    Compare-Object -ReferenceObject $accessavant -DifferenceObject $accessapres
     $count ++
 }
 <#
@@ -121,6 +126,5 @@ $sddl= $acl.sddl
 $acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
 $acl.SetSecurityDescriptorSddlForm($sddl)
 set-acl -Path C:\HAL\Powershell\Share\test\Share2 -AclObject $acl
-
 
 #>

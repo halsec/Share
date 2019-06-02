@@ -3439,3 +3439,303 @@ Nb de dossiers sans permissions : 6
 Windows PowerShell transcript end
 End time: 20190601124940
 **********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601185957
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1308
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share2
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share3
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share1\Test1
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share1\test2
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share3\TEST31
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:91 char:5
++     get-acl -LiteralPath $d.FullName -Audit | ForEach-Object { $_.Aud ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+Nb de dossiers sans permissions : 6
+**********************
+Windows PowerShell transcript end
+End time: 20190601185958
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601190238
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1308
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share2
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share3
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share1\Test1
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share1\test2
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+C:\HAL\Powershell\Share\test\Share3\TEST31
+Protected False
+PS>TerminatingError(Get-Acl): "The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation."
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : 
+System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.GetAclCommand
+get-acl : The process does not possess the 'SeSecurityPrivilege' privilege which is required for this operation.
+At C:\hal\Powershell\Share\Heritage_TraitementRepertoiresRacinesv1.ps1:92 char:5
++     get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.C ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Get-Acl], PrivilegeNotHeldException
+    + FullyQualifiedErrorId : System.Security.AccessControl.PrivilegeNotHeldException,Microsoft.PowerShell.Commands.Ge
+   tAclCommand
+
+Nb de dossiers sans permissions : 6
+**********************
+Windows PowerShell transcript end
+End time: 20190601190239
+**********************
+**********************
+Windows PowerShell transcript start
+Start time: 20190601190335
+Username: HALSURFACE\halsec
+RunAs User: HALSURFACE\halsec
+Configuration Name: 
+Machine: HALSURFACE (Microsoft Windows NT 10.0.17134.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 1308
+PSVersion: 5.1.17134.765
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.17134.765
+BuildVersion: 10.0.17134.765
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\HAL\Powershell\Share\log\Heritage_Traitement.log
+C:\HAL\Powershell\Share\test\Share1
+Protected False
+C:\HAL\Powershell\Share\test\Share2
+Protected False
+C:\HAL\Powershell\Share\test\Share3
+Protected False
+C:\HAL\Powershell\Share\test\Share1\Test1
+Protected False
+C:\HAL\Powershell\Share\test\Share1\test2
+Protected False
+C:\HAL\Powershell\Share\test\Share3\TEST31
+Protected False
+Nb de dossiers sans permissions : 6
+**********************
+Windows PowerShell transcript end
+End time: 20190601190335
+**********************
