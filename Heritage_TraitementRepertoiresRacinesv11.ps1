@@ -13,75 +13,69 @@ Function supprDoublonsUnique
     [switch]$NoPreserve,
     [switch]$Passthru
     )
-     
     BEGIN
     {
-            Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
+        Write-Verbose  "Starting $($MyInvocation.Mycommand)"
     } #begin
-     
     PROCESS
     {
-        Try {    
+        Try
+        {
             #$path = "C:\HAL\Powershell\Share\test\Share3"
             Write-Verbose  "PATH $path"
             $folderitem = Get-Item -LiteralPath $(Convert-Path $Path) -ErrorAction Stop
         }
-        Catch {
+        Catch
+        {
             Write-Warning "Failed to get $path"
             Write-Warning $_.exception.message
             #bail out
             Return
         }
-    $acl = get-acl $folderitem
-    $access = $acl.Access
-    #$access | select IdentityReference,FileSystemRights,IsInherited
-    $accessInherited = $access | Where-Object{ $_.IsInherited -eq $true}
-    #$accessInherited | ft IdentityReference,FileSystemRights,IsInherited
-    Write-Output "---------------------------------------------------------" -ForegroundColor yellow
+        $acl = get-acl $folderitem
+        $access = $acl.Access
+        #$access | select IdentityReference,FileSystemRights,IsInherited
+        $accessInherited = $access | Where-Object{ $_.IsInherited -eq $true}
+        #$accessInherited | ft IdentityReference,FileSystemRights,IsInherited
+        Write-Output "---------------------------------------------------------" -ForegroundColor yellow
 
-    $accessUnique = $access | Where-Object{$_.IsInherited -eq $false}
-    #$accessUnique | ft IdentityReference,FileSystemRights,IsInherited
+        $accessUnique = $access | Where-Object{$_.IsInherited -eq $false}
+        #$accessUnique | ft IdentityReference,FileSystemRights,IsInherited
 
-    $accessToRemove = Compare-Object -ReferenceObject $accessInherited -DifferenceObject $accessUnique  -Property IdentityReference,FileSystemRights -IncludeEqual
-    #$accessToRemove | ?{$_.SideIndicator -eq "=="}
+        $accessToRemove = Compare-Object -ReferenceObject $accessInherited -DifferenceObject $accessUnique  -Property IdentityReference,FileSystemRights -IncludeEqual
+        #$accessToRemove | ?{$_.SideIndicator -eq "=="}
 
-    write-output "------------------------ UNIQUE ---------------------------------------" -ForegroundColor yellow
-    #$access | sort | select -Unique
+        write-output "------------------------ UNIQUE ---------------------------------------" -ForegroundColor yellow
+        #$access | sort | select -Unique
 
-    #Suppression des permissions en double et non héritées
-    [System.Collections.ArrayList]$rules = @()
-    ForEach ($accessEnTrop in ($accessToRemove | ?{$_.SideIndicator -eq "=="}))
-    {
-        #("Identity {0}" -f $accessEnTrop.IdentityReference)
-        $rules += $acl.access | Where-Object
-        { 
-            (-not $_.IsInherited) -and 
-            $_.IdentityReference -eq $accessEnTrop.IdentityReference
+        #Suppression des permissions en double et non héritées
+        [System.Collections.ArrayList]$rules = @()
+        ForEach ($accessEnTrop in ($accessToRemove | Where-Object{$_.SideIndicator -eq "=="}))
+        {
+            #("Identity {0}" -f $accessEnTrop.IdentityReference)
+            $rules += $acl.access | Where-Object
+            {
+                (-not $_.IsInherited) -and
+                $_.IdentityReference -eq $accessEnTrop.IdentityReference
+            }
         }
-    }
-    ForEach($rule in $rules)
+        ForEach($rule in $rules)
+        {
+            $acl.RemoveAccessRule($rule) | Out-Null
+            $rule
+        }
+        Set-ACL -Path $path -AclObject $acl
+    }#process
+    END
     {
-        $acl.RemoveAccessRule($rule) | Out-Null
-        $rule
-    }
-    Set-ACL -Path $path -AclObject $acl
-
-}#process
- 
- END
- {
- 
-    Write-Verbose  "Ending $($MyInvocation.Mycommand)"     
- 
- } #end
- 
-} #end function
+        Write-Verbose  "Ending $($MyInvocation.Mycommand)"
+    } #end
+} #end function supprDoublonsUnique
 
 # Fonction pour r�parer les h�ritages cass�s
 Function Set-Inheritance
 {
     [cmdletbinding(SupportsShouldProcess)]
-    
     Param(
     [Parameter(Position=0,Mandatory,HelpMessage="Enter the file or folder path",
     ValueFromPipeline=$True,ValueFromPipelineByPropertyName)]
@@ -92,60 +86,61 @@ Function Set-Inheritance
     [switch]$NoPreserve,
     [switch]$Passthru
     )
-    
-    BEGIN {
-            Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
+    BEGIN
+    {
+            Write-Verbose  "Starting $($MyInvocation.Mycommand)"
     } #begin
-    
-    PROCESS {
-        Try {
+    PROCESS
+    {
+        Try
+        {
             Write-Verbose  "PATH $path"
-            $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction Stop  
+            $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction Stop
         }
-        Catch {
+        Catch
+        {
             Write-Warning "Failed to get $path"
             Write-Warning $_.exception.message
             #bail out
             Return
         }
-        if ($fitem) {
-                    Write-Verbose ("Resetting inheritance on {0}" -f $fitem.fullname)
-                    $aclProperties = Get-Acl $fItem
-                    Write-Verbose ($aclProperties | Select-Object * | out-string)                
-                    if ($noinherit) {
-                                    Write-Verbose "Setting inheritance to NoInherit"
-                                    if ($nopreserve) {
-                                        #remove inherited access rules  
-                                        Write-Verbose "Removing existing rules"          
-                                        $aclProperties.SetAccessRuleProtection($true,$false)
-                                    }
-                                    else {
-                                        #preserve inherited access rules
-                                        $aclProperties.SetAccessRuleProtection($true,$true)
-                                    }
-                    }
-        else {
-            #the second parameter is required but actually ignored
-            #in this scenario
-            $aclProperties.SetAccessRuleProtection($false,$false)
-        }
-        Write-Verbose "Setting the new ACL"
-        #hashtable of parameters to splat to Set-ACL
-        $setParams = @{
-            Path = $fitem
-            AclObject = $aclProperties
-            Passthru = $Passthru
-        }
-        
-        Set-Acl @setparams
+        if ($fitem)
+        {
+            Write-Verbose ("Resetting inheritance on {0}" -f $fitem.fullname)
+            $aclProperties = Get-Acl $fItem
+            Write-Verbose ($aclProperties | Select-Object * | out-string)
+            if ($noinherit)
+            {
+                            Write-Verbose "Setting inheritance to NoInherit"
+                            if ($nopreserve) {
+                                #remove inherited access rules
+                                Write-Verbose "Removing existing rules"
+                                $aclProperties.SetAccessRuleProtection($true,$false)
+                            }
+                            else {
+                                #preserve inherited access rules
+                                $aclProperties.SetAccessRuleProtection($true,$true)
+                            }
+            }
+            else
+            {
+                #the second parameter is required but actually ignored
+                #in this scenario
+                $aclProperties.SetAccessRuleProtection($false,$false)
+            }
+            Write-Verbose "Setting the new ACL"
+            #hashtable of parameters to splat to Set-ACL
+            $setParams = @{
+                Path = $fitem
+                AclObject = $aclProperties
+                Passthru = $Passthru
+            }
+            Set-Acl @setparams
         } #if $fitem
-    
     } #process
-    
-    END {
-    
-        Write-Verbose  "Ending $($MyInvocation.Mycommand)"     
-    
+    END
+    {
+        Write-Verbose  "Ending $($MyInvocation.Mycommand)"
     } #end
 } #end function Set-Inheritance
 
@@ -166,7 +161,7 @@ foreach ($d in $dir)
     $accessavant = $acl.Access
     write-output ("Protected {0}" -f $acl.AreAccessRulesProtected)
     #get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.Count }
-     
+
     Set-Inheritance $chemin -NoPreserve
     $acl = get-acl -LiteralPath $chemin
     $accessapres = $acl.Access
@@ -191,16 +186,4 @@ foreach ($d in $dir)
     }
 }#>
 write-output "Nb de dossiers sans permissions : $count"
-
 Stop-Transcript
-
-<#
-#Backup restore
-$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
-$sddl= $acl.sddl
-
-$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
-$acl.SetSecurityDescriptorSddlForm($sddl)
-set-acl -Path C:\HAL\Powershell\Share\test\Share2 -AclObject $acl
-
-#>
