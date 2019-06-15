@@ -3,7 +3,6 @@
 Function supprDoublonsUnique
 {
     [cmdletbinding(SupportsShouldProcess)]
- 
     Param(
     [Parameter(Position=0,Mandatory,HelpMessage="Enter the file or folder path",
     ValueFromPipeline=$True,ValueFromPipelineByPropertyName)]
@@ -15,11 +14,13 @@ Function supprDoublonsUnique
     [switch]$Passthru
     )
      
-    BEGIN {
+    BEGIN
+    {
             Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
     } #begin
      
-    PROCESS {
+    PROCESS
+    {
         Try {    
             #$path = "C:\HAL\Powershell\Share\test\Share3"
             Write-Verbose  "PATH $path"
@@ -34,17 +35,17 @@ Function supprDoublonsUnique
     $acl = get-acl $folderitem
     $access = $acl.Access
     #$access | select IdentityReference,FileSystemRights,IsInherited
-    $accessInherited = $access | ?{ $_.IsInherited -eq $true}
+    $accessInherited = $access | Where-Object{ $_.IsInherited -eq $true}
     #$accessInherited | ft IdentityReference,FileSystemRights,IsInherited
     Write-Output "---------------------------------------------------------" -ForegroundColor yellow
 
-    $accessUnique = $access | ?{$_.IsInherited -eq $false}
+    $accessUnique = $access | Where-Object{$_.IsInherited -eq $false}
     #$accessUnique | ft IdentityReference,FileSystemRights,IsInherited
 
     $accessToRemove = Compare-Object -ReferenceObject $accessInherited -DifferenceObject $accessUnique  -Property IdentityReference,FileSystemRights -IncludeEqual
     #$accessToRemove | ?{$_.SideIndicator -eq "=="}
 
-    write-output "------------------ UNIQUE ---------------------------------------" -ForegroundColor yellow
+    write-output "------------------------ UNIQUE ---------------------------------------" -ForegroundColor yellow
     #$access | sort | select -Unique
 
     #Suppression des permissions en double et non héritées
@@ -52,12 +53,14 @@ Function supprDoublonsUnique
     ForEach ($accessEnTrop in ($accessToRemove | ?{$_.SideIndicator -eq "=="}))
     {
         #("Identity {0}" -f $accessEnTrop.IdentityReference)
-        $rules += $acl.access | Where-Object { 
+        $rules += $acl.access | Where-Object
+        { 
             (-not $_.IsInherited) -and 
             $_.IdentityReference -eq $accessEnTrop.IdentityReference
         }
     }
-    ForEach($rule in $rules) {
+    ForEach($rule in $rules)
+    {
         $acl.RemoveAccessRule($rule) | Out-Null
         $rule
     }
@@ -65,11 +68,12 @@ Function supprDoublonsUnique
 
 }#process
  
- END {
+ END
+ {
  
-        Write-Verbose  "Ending $($MyInvocation.Mycommand)"     
+    Write-Verbose  "Ending $($MyInvocation.Mycommand)"     
  
-    } #end
+ } #end
  
 } #end function
 
