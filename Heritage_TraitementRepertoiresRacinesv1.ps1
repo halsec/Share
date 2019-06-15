@@ -1,6 +1,79 @@
-# Fonction pour réparer les héritages cassés
-Function Set-Inheritance {
+#$verbosePreference="Continue"
+
+Function supprDoublonsUnique { 
+    [cmdletbinding(SupportsShouldProcess)]
  
+    Param(
+    [Parameter(Position=0,Mandatory,HelpMessage="Enter the file or folder path",
+    ValueFromPipeline=$True,ValueFromPipelineByPropertyName)]
+    [ValidateNotNullOrEmpty()]
+    [Alias("PSPath")]
+    [string]$Path,
+    [switch]$NoInherit,
+    [switch]$NoPreserve,
+    [switch]$Passthru
+    )
+     
+    BEGIN {
+            Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
+    } #begin
+     
+    PROCESS {
+        Try {    
+            #$path = "C:\HAL\Powershell\Share\test\Share3"
+            Write-Verbose  "PATH $path"
+            $folderitem = Get-Item -LiteralPath $(Convert-Path $Path) -ErrorAction Stop
+        }
+        Catch {
+            Write-Warning "Failed to get $path"
+            Write-Warning $_.exception.message
+            #bail out
+            Return
+        }
+    $acl = get-acl $folderitem
+    $access = $acl.Access
+    #$access | select IdentityReference,FileSystemRights,IsInherited
+    $accessInherited = $access | ?{ $_.IsInherited -eq $true}
+    #$accessInherited | ft IdentityReference,FileSystemRights,IsInherited
+    Write-Host "---------------------------------------------------------" -ForegroundColor yellow
+
+    $accessUnique = $access | ?{$_.IsInherited -eq $false}
+    #$accessUnique | ft IdentityReference,FileSystemRights,IsInherited
+
+    $accessToRemove = Compare-Object -ReferenceObject $accessInherited -DifferenceObject $accessUnique  -Property IdentityReference,FileSystemRights -IncludeEqual
+    #$accessToRemove | ?{$_.SideIndicator -eq "=="}
+
+    Write-Host "------------------ UNIQUE ---------------------------------------" -ForegroundColor yellow
+    #$access | sort | select -Unique
+
+    #Suppression des permissions en double et non hÃ©ritÃ©es
+    [System.Collections.ArrayList]$rules = @()
+    ForEach ($accessEnTrop in ($accessToRemove | ?{$_.SideIndicator -eq "=="}))
+    {
+        #("Identity {0}" -f $accessEnTrop.IdentityReference)
+        $rules += $acl.access | Where-Object { 
+            (-not $_.IsInherited) -and 
+            $_.IdentityReference -eq $accessEnTrop.IdentityReference
+        }
+    }
+    ForEach($rule in $rules) {
+        $acl.RemoveAccessRule($rule) | Out-Null
+        $rule
+    }
+    Set-ACL -Path $path -AclObject $acl
+
+}#process
+ 
+ END {
+ 
+        Write-Verbose  "Ending $($MyInvocation.Mycommand)"     
+ 
+    } #end
+ 
+} #end function
+
+# Fonction pour rï¿½parer les hï¿½ritages cassï¿½s
+Function Set-Inheritance {
 [cmdletbinding(SupportsShouldProcess)]
  
 Param(
@@ -15,13 +88,12 @@ ValueFromPipeline=$True,ValueFromPipelineByPropertyName)]
 )
  
 BEGIN {
-    
-    Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
- 
+        Write-Verbose  "Starting $($MyInvocation.Mycommand)"     
 } #begin
  
 PROCESS {
     Try {
+        Write-Verbose  "PATH $path"
         $fitem = Get-Item -path $(Convert-Path $Path) -ErrorAction Stop  
     }
     Catch {
@@ -31,27 +103,25 @@ PROCESS {
         Return
     }
     if ($fitem) {
-    Write-Verbose ("Resetting inheritance on {0}" -f $fitem.fullname)
-    $aclProperties = Get-Acl $fItem
- 
-    Write-Verbose ($aclProperties | Select * | out-string)
-    	
-    if ($noinherit) {
-        Write-Verbose "Setting inheritance to NoInherit"
-    	if ($nopreserve) {
-     #remove inherited access rules  
-            Write-Verbose "Removing existing rules"          
-     $aclProperties.SetAccessRuleProtection($true,$false)
-     }
-     else {
-     #preserve inherited access rules
-     $aclProperties.SetAccessRuleProtection($true,$true)
-     }
-    }
+                Write-Verbose ("Resetting inheritance on {0}" -f $fitem.fullname)
+                $aclProperties = Get-Acl $fItem
+                Write-Verbose ($aclProperties | Select-Object * | out-string)                
+                if ($noinherit) {
+                                Write-Verbose "Setting inheritance to NoInherit"
+                                if ($nopreserve) {
+                                    #remove inherited access rules  
+                                    Write-Verbose "Removing existing rules"          
+                                    $aclProperties.SetAccessRuleProtection($true,$false)
+                                }
+                                else {
+                                    #preserve inherited access rules
+                                    $aclProperties.SetAccessRuleProtection($true,$true)
+                                }
+                }
     else {
-     #the second parameter is required but actually ignored
+        #the second parameter is required but actually ignored
         #in this scenario
-     $aclProperties.SetAccessRuleProtection($false,$false)
+        $aclProperties.SetAccessRuleProtection($false,$false)
     }
     Write-Verbose "Setting the new ACL"
     #hashtable of parameters to splat to Set-ACL
@@ -75,49 +145,57 @@ END {
 } #end function
 
 # Fichier de log dans F:\Scripts\Share\
-Start-Transcript -Path F:\Scripts\Share\Heritage_TraitementRepertoiresRacinesv1.log -Append
+#Start-Transcript -Path F:\Scripts\Share\Heritage_TraitementRepertoiresRacinesv1.log -Append
+Start-Transcript -Path C:\HAL\Powershell\Share\log\Heritage_Traitement.log -Append
 
-# Scan des répertoires racines
-$path = "P:\Partages\"
-$dir = Get-ChildItem -Attributes Directory -Path $path
+# Scan des rï¿½pertoires racines
+$path = "C:\HAL\Powershell\Share\test"
+$dir = Get-ChildItem -Attributes Directory -Path $path -Recurse
 $count = 0
+
 foreach ($d in $dir)
 {
-    if ($d.Name -like "g*")
-    {
-        Write-host $d.Name -ForegroundColor Green
-        #$acl = Get-Acl -Path "F:\Scripts\$d"
-        #$acl.access.IdentityReference
-
-        # Récupération des acls non hérités et de l'acl du dossier
-        $dossier_name = $path + $d
-        write-host $dossier_name
-        $aclaccess = Get-Acl -Path $dossier_name | Select-Object -ExpandProperty Access | Where-Object { -Not $_.IsInherited }
-        $aclfolder = Get-Acl -Path $dossier_name
-
-        if ($aclfolder.AreAccessRulesProtected -eq $true)
-        {
-            Write-host $aclaccess.count -ForegroundColor Red
-            $aclfolder
-            $aclfolder.Access
-            $count ++
-            $aclfolder.SetAccessRuleProtection($False,$True)
-            $aclfolder | Set-Acl -Path $dossier_name
-        }
-    }
+    $chemin = $d.FullName
+    Write-host $chemin -ForegroundColor Green
+    $acl = get-acl -LiteralPath $chemin
+    $accessavant = $acl.Access
+    Write-Host ("Protected {0}" -f $acl.AreAccessRulesProtected)
+    #get-acl -LiteralPath $chemin -Audit | ForEach-Object { $_.Audit.Count }
+     
+    Set-Inheritance $chemin -NoPreserve
+    $acl = get-acl -LiteralPath $chemin
+    $accessapres = $acl.Access
+    Compare-Object -ReferenceObject $accessavant -DifferenceObject $accessapres --Property IdentityReference,FileSystemRights
+    $count ++
 }
+<#
+    # Rï¿½cupï¿½ration des acls non hï¿½ritï¿½s et de l'acl du dossier
+    $dossier_name = $path + $d
+    write-host $dossier_name
+    $aclaccess = Get-Acl -Path $dossier_name | Select-Object -ExpandProperty Access | Where-Object { -Not $_.IsInherited }
+    $aclfolder = Get-Acl -Path $dossier_name
+
+    if ($aclfolder.AreAccessRulesProtected -eq $true)
+    {
+        Write-host $aclaccess.count -ForegroundColor Red
+        $aclfolder
+        $aclfolder.Access
+        $count ++
+        $aclfolder.SetAccessRuleProtection($False,$True)
+        $aclfolder | Set-Acl -Path $dossier_name
+    }
+}#>
 write-host "Nb de dossiers sans permissions : $count"
 
 Stop-Transcript
 
 <#
-$Path = "H:\Reseaux"
-$aclfolder = 	Get-Acl -Path $Path
-$aclfolder.SetAccessRuleProtection($False,$True)
-$aclfolder | Set-Acl -Path $Path
+#Backup restore
+$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
+$sddl= $acl.sddl
 
-$acl = get-acl -path "F:\Temp"
-$perm = 'Everyone', 'Delete', 'None', 'None', 'Deny'
-$rule = New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule -ArgumentList $perm
-$acl.SetAccessRule($rule)
-$acl | Set-Acl -Path "F:\Temp"#>
+$acl = get-acl -Path C:\HAL\Powershell\Share\test\Share2
+$acl.SetSecurityDescriptorSddlForm($sddl)
+set-acl -Path C:\HAL\Powershell\Share\test\Share2 -AclObject $acl
+
+#>
